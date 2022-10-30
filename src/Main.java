@@ -124,6 +124,8 @@ public class Main {
                 sonuclar.add(2,m.mod+sonuclar.get(2));
             }
             y = sonuclar.get(2);
+            //System.out.println("sonuc: "+sonuc);
+            //System.out.println("eklenecek deger: "+"yx"+"M/m1x"+M/m.mod+"X "+y*(M/m.mod)*m.deger);
             sonuc += y*(M/m.mod)*m.deger;
         }
         if(sonuc> M) {
@@ -132,7 +134,7 @@ public class Main {
         return sonuc;
     }
     public static void main(String[] args) {
-        System.out.println("---------------------- \n* euclid algorithm * \n" +
+        System.out.println("---------------------- \n* euclidean algorithm * \n" +
                 "----------------------");
         System.out.println("gcd"+"(a,b) = "+oklid(32,3));
         List<Integer> exteuclid ;
@@ -140,19 +142,18 @@ public class Main {
         a= 13;
         b = 77;
         exteuclid = exteuclid2(a,b);
-        System.out.println("---------------------- \n* extended euclid algorithm * \n" +
+        System.out.println("---------------------- \n* extended euclidean algorithm * \n" +
                 "----------------------");
         if(exteuclid.get(2)<0) {
             exteuclid.add(2,a+exteuclid.get(2));
         }
         System.out.println(exteuclid.get(2));
-        System.out.println("---------------------- \n* cinli kalanlar  algorithm * \n" +
+        System.out.println("---------------------- \n* cinli kalanlar  theorem * \n" +
                 "----------------------");
         List<Mod> mods = new ArrayList<>();
         mods.add(0,new Mod(3,7));
         mods.add(1,new Mod(9,17));
         mods.add(2,new Mod(8,13));
-        mods.add(3,new Mod(21,41));
         System.out.println(cinliKalanlar(mods));
     }
 }
